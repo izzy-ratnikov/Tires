@@ -9,7 +9,6 @@ from pages.base_page import BasePage
 from pages.main_tires_page import MainTiresPage
 
 
-
 @pytest.fixture
 def page():  # Изменение типа возвращаемого значения
     playwright = sync_playwright().start()
@@ -32,7 +31,6 @@ def main_page(page):
 @pytest.fixture
 def base_page(page):
     return BasePage(page)
-
 
 
 def get_chrome_browser(playwright) -> Browser:

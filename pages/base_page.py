@@ -25,3 +25,9 @@ class BasePage:
         """Генерирует случайный пароль"""
         letters_and_digits = string.ascii_letters + string.digits
         return ''.join(random.choice(letters_and_digits) for _ in range(password_length))
+
+    def is_element_visible(self, selector):
+        expect(self.page.locator(selector)).to_be_visible()
+
+    def to_have_count(self, selector, number):
+        expect(self.page.locator(selector)).to_have_count(number)
